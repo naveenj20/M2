@@ -1,4 +1,8 @@
+### NAME : Naveen Jaisanker
+### REG. NO. : 212224110039
+
 # EX-06 - Looping
+
 ## AIM:
 Write a C program to print even numbers ranging from M to N (including M and N values).
 
@@ -13,27 +17,37 @@ Write a C program to print even numbers ranging from M to N (including M and N v
 
 ## PROGRAM:
 
+```
+#include <stdio.h>
+int main() {
+    int M, N;
+    scanf("%d %d", &M, &N);
+    int start = (M > N) ? M : N;
+    int end = (M < N) ? M : N;
+    if (start % 2 != 0) {
+        start--; 
+    }
+    for (int i = start; i >= end; i -= 2) {
+        if (i % 2 == 0) { 
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+    return 0;
+}
+```
+
 ## OUTPUT:
 
-
-
-
-
-
-
-
-
+![Screenshot 2025-04-28 085327](https://github.com/user-attachments/assets/1fdb5663-ee81-4bb3-80fb-2b0576015450)
 
 ## RESULT:
 Thus the program to print even numbers ranging from M to N (including M and N values) has been executed successfully
  
- 
-
 
 # EX-07-Nested-loop
 
 ## AIM:
-
 Write a C program to print the given triangular pattern using loop.
 
 ## ALGORITHM:
@@ -46,18 +60,29 @@ Write a C program to print the given triangular pattern using loop.
 
 ## PROGRAM:
 
+```
+#include <stdio.h>
+int main() {
+    int i, j, n;
+    printf("Enter the number of rows: ");
+    scanf("%d", &n);
+    for (i = n; i >= 1; i--) {
+        for (j = 1; j <= i; j++) {
+            printf("$");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+```
 
 ## OUTPUT:
 
-
-
+![Screenshot 2025-04-28 085437](https://github.com/user-attachments/assets/d35e8f71-da2c-46a9-ae75-73f6835af83a)
 
 
 ## RESULT:
-
 Thus the program to print the given triangular pattern using loop has been executed successfully
- 
- 
 
 
 # EX-08-Functions
@@ -75,20 +100,37 @@ Write a C program to perform addition and subtraction of two numbers using funct
 
 ## PROGRAM:
 
+```
+#include <stdio.h>
+
+int add(int, int);
+int sub(int, int);
+
+int main() {
+    int a, b;
+    printf("Enter two integers: ");
+    scanf("%d%d", &a, &b);
+    printf("Addition: %d\n", add(a, b));
+    printf("Subtraction: %d\n", sub(a, b));
+    return 0;
+}
+
+int add(int x, int y) {
+    return x + y;
+}
+
+int sub(int x, int y) {
+    return x - y;
+}
+```
 
 ## OUTPUT:
 
-
-
-
-
+![Screenshot 2025-04-28 085631](https://github.com/user-attachments/assets/0b9fd636-5744-47fe-80e9-e7a22f3ff1a6)
 
 ## RESULT:
-
 Thus the program to perform addition and subtraction of two numbers using functions has been executed successfully
  
- 
-
 
 # EX-09-Use For Loop
 
@@ -107,22 +149,38 @@ Write a c program to find the sum of odd digits using for loop
 
 ## PROGRAM:
 
+```
+#include <stdio.h>
+int main() {
+    int a, b, sum = 0;
+    printf("Enter two integers (start and end): ");
+    scanf("%d%d", &a, &b);
+
+    for (int i = a; i <= b; i++) {
+        if (i % 2 != 0) {
+            sum += i;
+        }
+    }
+    printf("Sum of odd numbers between %d and %d is: %d\n", a, b, sum);
+    return 0;
+}
+```
+
 
 ## OUTPUT:
 
-
-
+![Screenshot 2025-04-28 085724](https://github.com/user-attachments/assets/bc96212e-6d93-4eda-b9a5-6558cb377501)
 
 ## RESULT:
 
 Thus the program to find the sum of odd digits using for loop has been executed successfully.
 
 
-
-
 # EX – 10 - Factorial of a Number Using a Function
+
 ## AIM:
 To write a C program that calculates the factorial of a given number using a user-defined function.
+
 ## ALGORITHM:
 1.	Start
 2.	Declare the function fact().
@@ -137,8 +195,24 @@ d.	After the loop, print the factorial value.
 
 ## PROGRAM:
 
+```
+#include <stdio.h>
+int main() {
+    int n, fact = 1;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    printf("Factorial of %d is: %d\n", n, fact);
+    return 0;
+}
+```
 
 ## OUTPUT:
+
+![Screenshot 2025-04-28 085827](https://github.com/user-attachments/assets/177714f0-ab7d-4edb-af3d-caf809a6cb69)
 
 ## RESULT:
 The program correctly computes the factorial of a given number using a separate function and displays the result.
